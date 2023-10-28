@@ -4,13 +4,20 @@ import pandas as pd
 data = pd.read_csv("data_cleaning.csv")
 print(data)
 
+# Exploratory Data Analysis Before Cleaning
+print(data.describe())
+print(data.isnull().sum())
+
+
 # Drop Duplicates
 # Drop_duplicates() removes the duplicate rows from the dataframe
 data = data.drop_duplicates()
+print(data)
 
 # Drop Extra Columns
 # Drop() removes the column provided in () from the dataframe
 data = data.drop(columns = "Not_Useful_Column")
+print(data)
 
 # Remove Extra Values
 # Strip() removes the value provided in () from both sides of the string 
@@ -48,3 +55,8 @@ print(data)
 
 data = data.reset_index(drop=True)
 print(data)
+
+# Perform Exploratory Data Analysis
+print(data.describe())
+print(data.isnull().sum())
+
